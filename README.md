@@ -50,5 +50,13 @@ Components Available
 ====================
 - Card
   - CardPrimary
-  - CardTitle
-  - CardSubTitle
+    - CardTitle
+    - CardSubTitle
+  - CardSupportingText
+  - CardActions
+    - CardActionButton
+  - CardMediaItem
+- Toolbar
+  - ToolbarSection
+    - ToolbarTitle
+- Main
