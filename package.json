@@ -39,7 +39,6 @@
     "react-addons-test-utils": "0.14.3",
     "sinon": "1.17.1",
     "sinon-chai": "2.8.0",
-    "spa": "file:./spa",
     "teaspoon": "5.0.1",
     "webpack": "1.12.2",
     "webpack-stream": "2.1.1"

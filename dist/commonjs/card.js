@@ -257,28 +257,26 @@ var CardMediaItem = (function (_React$Component8) {
         key: 'render',
         value: function render() {
 
-            var size = 1;
+            var modClass = "mdc-card__media-item--1x";
             if (!(this.props.size == null)) {
-                size = this.props.size;
+                switch (this.props.size) {
+                    case "1dot5x":
+                        modClass = "mdc-card__media-item--1dot5x";
+                        break;
+                    case "2x":
+                        modClass = "mdc-card__media-item--2x";
+                        break;
+                    case "3x":
+                        modClass = "mdc-card__media-item--3x";
+                        break;
+                    default:
+                        modClass = "mdc-card__media-item--1x";
+                }
             }
 
-            var modClass = "mdc-card__media-item--1x";
-            switch (size) {
-                case 1.5:
-                    modClass = "mdc-card__media-item--1dot5x";
-                    break;
-                case 2:
-                    modClass = "mdc-card__media-item--2x";
-                    break;
-                case 3:
-                    modClass = "mdc-card__media-item--3x";
-                    break;
-                default:
-                    modClass = "mdc-card__media-item--1x";
-            }
             var classes = "mdc-card__media-item".concat(' ').concat(modClass);
 
-            return _react2['default'].createElement('img', { 'class': classes, src: this.props.src });
+            return _react2['default'].createElement('img', { className: classes, src: this.props.src });
         }
     }]);
 
@@ -289,5 +287,5 @@ exports.CardMediaItem = CardMediaItem;
 
 CardMediaItem.propTypes = {
     src: _react2['default'].PropTypes.string.isRequired,
-    size: _react2['default'].PropTypes.number
+    size: _react2['default'].PropTypes.string
 };

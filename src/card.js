@@ -123,34 +123,33 @@ export class CardSupportingText extends React.Component{
 export class CardMediaItem extends React.Component{
     render(){
 
-        var size = 1
-        if(!(this.props.size==null)){
-            size = this.props.size
-        }
 
         var modClass = "mdc-card__media-item--1x"
-        switch (size){
-            case 1.5:
-                modClass = "mdc-card__media-item--1dot5x"
-                break
-            case 2:
-                modClass = "mdc-card__media-item--2x"
-                break
-            case 3:
-                modClass = "mdc-card__media-item--3x"
-                break
-            default:
-                modClass = "mdc-card__media-item--1x"
+        if(!(this.props.size==null)){
+            switch (this.props.size){
+                case "1dot5x":
+                    modClass = "mdc-card__media-item--1dot5x"
+                    break
+                case "2x":
+                    modClass = "mdc-card__media-item--2x"
+                    break
+                case "3x":
+                    modClass = "mdc-card__media-item--3x"
+                    break
+                default:
+                    modClass = "mdc-card__media-item--1x"
+            }
         }
+
         let classes = "mdc-card__media-item".concat(' ').concat(modClass)
 
         return(
-            <img class={classes} src={this.props.src}></img>
+            <img className={classes} src={this.props.src}></img>
         )
     }
 }
 
 CardMediaItem.propTypes = {
     src:React.PropTypes.string.isRequired,
-    size: React.PropTypes.number
+    size: React.PropTypes.string
 }
