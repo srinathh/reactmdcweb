@@ -174,7 +174,7 @@ var Main = (function (_React$Component4) {
             var children = _props4.children;
             var className = _props4.className;
 
-            var others = _objectWithoutProperties(_props4, ['fixedToolbarAdjust', 'children', 'className']);
+            var other = _objectWithoutProperties(_props4, ['fixedToolbarAdjust', 'children', 'className']);
 
             var classnames = (0, _classnames2['default'])({ 'mdc-toolbar-fixed-adjust': fixedToolbarAdjust }, className);
 

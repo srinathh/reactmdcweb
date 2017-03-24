@@ -87,7 +87,7 @@ export class Main extends React.Component{
     }
 
     render(){
-        var {fixedToolbarAdjust, children, className, ...others} = this.props
+        var {fixedToolbarAdjust, children, className, ...other} = this.props
 
         const classnames = classNames(
             {'mdc-toolbar-fixed-adjust':fixedToolbarAdjust},
