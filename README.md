@@ -54,9 +54,9 @@ Components Available
     - CardSubTitle
   - CardSupportingText
   - CardActions
-    - CardActionButton
   - CardMediaItem
 - Toolbar
   - ToolbarSection
     - ToolbarTitle
 - Main
+- Button
