@@ -11,87 +11,93 @@ import classNames from 'classnames'
 */
 
 export class Toolbar extends React.Component{
-    render(){
-        var fixed = true
-        if(!(this.props.fixed==null))
-            fixed = this.props.fixed
+    static propTypes={
+        fixed: React.PropTypes.bool
+    }
 
-        let classnames = classNames({
-            'mdc-toolbar':true,
-            'mdc-toolbar--fixed':fixed
-        })
+    render(){
+        var {fixed, className, children, ...other} = this.props
+
+        if(typeof fixed === 'undefined')
+            fixed = false
+
+        const classnames = classNames(
+            'mdc-toolbar',
+            {'mdc-toolbar--fixed':fixed},
+            className
+        )
+
         return(
-            <header className={classnames}>
-                {this.props.children}
+            <header className={classnames} {...other}>
+                {children}
             </header>
         )
     }
 }
 
-Toolbar.propTypes = {
-    fixed: React.PropTypes.bool
-}
-
 export class ToolbarSection extends React.Component{
+    static propTypes = {
+        alignStart: React.PropTypes.bool,
+        alignEnd: React.PropTypes.bool
+    }
+
     render(){
+        var {alignStart, alignEnd, className, children, ...other} = this.props
 
-        var alignStart = false;
-        var alignEnd = false;
+        // both alignStart and alignEnd should not be true at the same time
+        // if they are both true, then we will prioritize alignStart
+        if(typeof alignStart !== 'undefined' && typeof alignEnd !== 'undefined')
+            if(alignStart === true && alignEnd === true)
+                alignEnd = false    
 
-        if(!(this.props.alignStart==null))
-            alignStart = this.props.alignStart
-
-        if(!(this.props.alignEnd==null))
-            alignEnd = this.props.alignEnd
-
-
-        let classnames = classNames({
-            'mdc-toolbar__section':true,
-            'mdc-toolbar__section--align-start':alignStart,
-            'mdc-toolbar__section--align-end': alignEnd
-        })
+        let classnames = classNames(
+            'mdc-toolbar__section', 
+            {
+                'mdc-toolbar__section--align-start':alignStart,
+                'mdc-toolbar__section--align-end': alignEnd
+            },
+            className
+        )
         return(
-            <section className={classnames}>
-                {this.props.children}
+            <section className={classnames} {...other}>
+                {children}
             </section>
         )
     }
 }
 
-ToolbarSection.propTypes = {
-    alignStart: React.PropTypes.bool,
-    alignEnd: React.PropTypes.bool
-}
-
 export class ToolbarTitle extends React.Component{
     render(){
+        var {className, children, ...other} = this.props
+        const classnames = classNames(
+            'mdc-toolbar__title',
+            className
+        )
         return(
-            <span className="mdc-toolbar__title">
-                {this.props.children}
+            <span className={classnames} {...other}>
+                {children}
             </span>
         )
     }
 }
 
 export class Main extends React.Component{
+    static propTypes = {
+        fixedToolbarAdjust: React.PropTypes.bool
+    }
+
     render(){
-        var fixedToolbar = false;
+        var {fixedToolbarAdjust, children, className, ...others} = this.props
 
-        if(!(this.props.fixedToolbar==null))
-            fixedToolbar = this.props.fixedToolbar
-
-        let classnames = classNames({
-            'mdc-toolbar-fixed-adjust':fixedToolbar
-        })
+        const classnames = classNames(
+            {'mdc-toolbar-fixed-adjust':fixedToolbarAdjust},
+            className
+        )
 
         return(
-            <main className={classnames}>
-                {this.props.children}
+            <main className={classnames} {...other}>
+                {children}
             </main>
         )
     }
-}
-
-Main.propTypes = {
-    fixedToolbar: React.PropTypes.bool
 }
