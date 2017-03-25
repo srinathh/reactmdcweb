@@ -1,7 +1,12 @@
 reactmdcweb
 ===========
 [Material Components for Web](https://github.com/material-components/material-components-web)
-encapsulated as React Components. Built using [React to CommonJS](https://github.com/goncalvesjoao/react-to-commonJS).
+encapsulated as React Components. Compiled to CommonJS using [React to CommonJS](https://github.com/goncalvesjoao/react-to-commonJS).
+
+These components use the CSS and JS directly from Material Components for Web.
+They use the [Simpler Approach](https://github.com/material-components/material-components-web/blob/master/docs/integrating-into-frameworks.md#the-simple-approach-wrapping-mdc-web-vanilla-components) 
+of wrapping MDC-Web vanilla components and are suitable for use in a Browser
+Context where they can be mounted in a DOM.  
 
 Usage
 =====
