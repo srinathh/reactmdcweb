@@ -104,3 +104,51 @@ var ListItem = (function (_React$Component2) {
 })(_react2['default'].Component);
 
 exports.ListItem = ListItem;
+
+var ListItemText = (function (_React$Component3) {
+    _inherits(ListItemText, _React$Component3);
+
+    function ListItemText() {
+        _classCallCheck(this, ListItemText);
+
+        _get(Object.getPrototypeOf(ListItemText.prototype), 'constructor', this).apply(this, arguments);
+    }
+
+    _createClass(ListItemText, [{
+        key: 'render',
+        value: function render() {
+            var _props3 = this.props;
+            var secondary = _props3.secondary;
+            var noLeftAlign = _props3.noLeftAlign;
+            var className = _props3.className;
+            var children = _props3.children;
+
+            var other = _objectWithoutProperties(_props3, ['secondary', 'noLeftAlign', 'className', 'children']);
+
+            var styling = { textAlign: "left" };
+
+            if (typeof noLeftAlign !== 'undefined') if (noLeftAlign) styling = {};
+
+            var classnames = (0, _classnames2['default'])({
+                'mdc-list-item__text': !secondary,
+                'mdc-list-item__text__secondary': secondary
+            }, className);
+            return _react2['default'].createElement(
+                'span',
+                _extends({ style: styling, className: classnames }, other),
+                children
+            );
+        }
+    }], [{
+        key: 'propTypes',
+        value: {
+            secondary: _react2['default'].PropTypes.bool,
+            noLeftAlign: _react2['default'].PropTypes.bool
+        },
+        enumerable: true
+    }]);
+
+    return ListItemText;
+})(_react2['default'].Component);
+
+exports.ListItemText = ListItemText;

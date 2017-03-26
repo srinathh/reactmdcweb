@@ -82,3 +82,4 @@ These UI elements have currently been implemented. More to come.
 - List Components
   - List,
   - ListItem
+  - ListItemText

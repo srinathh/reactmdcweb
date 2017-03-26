@@ -43,3 +43,31 @@ export class ListItem extends React.Component{
     }
 }
 
+export class ListItemText extends React.Component{
+    static propTypes = {
+        secondary: React.PropTypes.bool,
+        noLeftAlign: React.PropTypes.bool
+    } 
+    render(){
+        const {secondary, noLeftAlign, className, children, ...other} = this.props
+
+        let styling = { textAlign:"left" }
+
+        if(typeof noLeftAlign !== 'undefined')
+            if(noLeftAlign)
+                styling = {}
+
+        const classnames = classNames(
+            {
+                'mdc-list-item__text':!secondary,
+                'mdc-list-item__text__secondary':secondary
+            },
+            className
+        )
+        return(
+            <span style={styling} className={classnames} {...other}>
+                {children}
+            </span>
+        )
+    }
+}

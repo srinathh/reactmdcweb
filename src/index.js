@@ -33,5 +33,6 @@ export {
 
 export {
     List,
-    ListItem
+    ListItem,
+    ListItemText
 } from './list'
