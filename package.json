@@ -5,7 +5,7 @@
   "author": "",
   "repository": {
     "type": "git",
-    "url": ""
+    "url": "https://github.com/srinathh/reactmdcweb.git"
   },
   "license": "MIT",
   "main": "dist/commonjs/index.js",
