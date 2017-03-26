@@ -75,3 +75,20 @@ export class TemporaryDrawerToolbarSpacer extends React.Component{
         )
     }
 }
+
+export class TemporaryDrawerHeader extends React.Component{
+    render(){
+        const {className, children, ...other} = this.props
+        const classnames = classNames(
+            'mdc-temporary-drawer__header',
+            className    
+        )
+        return(
+            <header className={classnames} {...other}>
+                <div className='mdc-temporary-drawer__header-content'>
+                    {children}
+                </div>
+            </header>
+        )
+    }
+}

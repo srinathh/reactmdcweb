@@ -102,6 +102,12 @@ Object.defineProperty(exports, 'TemporaryDrawerToolbarSpacer', {
         return _drawer.TemporaryDrawerToolbarSpacer;
     }
 });
+Object.defineProperty(exports, 'TemporaryDrawerHeader', {
+    enumerable: true,
+    get: function get() {
+        return _drawer.TemporaryDrawerHeader;
+    }
+});
 
 var _button = require('./button');
 

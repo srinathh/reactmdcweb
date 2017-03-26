@@ -19,7 +19,8 @@ export {
 export {
     TemporaryDrawer,
     TemporaryDrawerContent,
-    TemporaryDrawerToolbarSpacer
+    TemporaryDrawerToolbarSpacer,
+    TemporaryDrawerHeader
 } from './drawer'
 
 export {

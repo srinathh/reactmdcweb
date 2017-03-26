@@ -157,3 +157,39 @@ var TemporaryDrawerToolbarSpacer = (function (_React$Component3) {
 })(_react2['default'].Component);
 
 exports.TemporaryDrawerToolbarSpacer = TemporaryDrawerToolbarSpacer;
+
+var TemporaryDrawerHeader = (function (_React$Component4) {
+    _inherits(TemporaryDrawerHeader, _React$Component4);
+
+    function TemporaryDrawerHeader() {
+        _classCallCheck(this, TemporaryDrawerHeader);
+
+        _get(Object.getPrototypeOf(TemporaryDrawerHeader.prototype), 'constructor', this).apply(this, arguments);
+    }
+
+    _createClass(TemporaryDrawerHeader, [{
+        key: 'render',
+        value: function render() {
+            var _props4 = this.props;
+            var className = _props4.className;
+            var children = _props4.children;
+
+            var other = _objectWithoutProperties(_props4, ['className', 'children']);
+
+            var classnames = (0, _classnames2['default'])('mdc-temporary-drawer__header', className);
+            return _react2['default'].createElement(
+                'header',
+                _extends({ className: classnames }, other),
+                _react2['default'].createElement(
+                    'div',
+                    { className: 'mdc-temporary-drawer__header-content' },
+                    children
+                )
+            );
+        }
+    }]);
+
+    return TemporaryDrawerHeader;
+})(_react2['default'].Component);
+
+exports.TemporaryDrawerHeader = TemporaryDrawerHeader;
