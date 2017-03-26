@@ -12,10 +12,16 @@ documented specifications and let you use your nodes as children.
 
 The setup for compiling to CommonJS uses [React to CommonJS](https://github.com/goncalvesjoao/react-to-commonJS) project.
 
+Repositories
+============
+- GitHub repository: [https://github.com/srinathh/reactmdcweb](https://github.com/srinathh/reactmdcweb)
+- NPM package: [https://www.npmjs.com/package/reactmdcweb](https://www.npmjs.com/package/reactmdcweb)
+
 Usage
 =====
 
-Install material components for web in your package
+## 1. Import CSS for material components for web into your app.
+Install material components for web in your app
 ```
 npm install --save material-components-web
 ```
@@ -31,15 +37,17 @@ only the CSS belonging to the components of interest like this.
 import '@material/card/dist/mdc.card.min.css'
 ```
 
-Import components of interest from the reactmdcweb package into 
-your app. Currently this is not published to npm since it's not 
-yet stable, so you will have to do a relative import to where
-ever you have saved the package.
+## 2. Install 'reactmdcweb` package
 ```
-import {Card, CardPrimary, CardTitle, CardSubTitle} from '../../github.com/srinathh/reactmdcweb' 
+npm install --save reactmdcweb
 ```
 
-Use the Components
+## 3. Import required components into your app 
+```
+import {Card, CardPrimary, CardTitle, CardSubTitle} from 'reactmdcweb'
+```
+
+## 4. Use the Components
 ```
 <Card>
     <CardPrimary>
@@ -49,8 +57,8 @@ Use the Components
 </Card>
 ```
 
-Building
-========
+Compiling
+=========
 ```
 npm run build-commonjs
 ```
