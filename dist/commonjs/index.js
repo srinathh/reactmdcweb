@@ -90,6 +90,12 @@ Object.defineProperty(exports, 'TemporaryDrawer', {
         return _drawer.TemporaryDrawer;
     }
 });
+Object.defineProperty(exports, 'TemporaryDrawerContent', {
+    enumerable: true,
+    get: function get() {
+        return _drawer.TemporaryDrawerContent;
+    }
+});
 
 var _button = require('./button');
 
@@ -97,5 +103,14 @@ Object.defineProperty(exports, 'Button', {
     enumerable: true,
     get: function get() {
         return _button.Button;
+    }
+});
+
+var _fab = require('./fab');
+
+Object.defineProperty(exports, 'Fab', {
+    enumerable: true,
+    get: function get() {
+        return _fab.Fab;
     }
 });

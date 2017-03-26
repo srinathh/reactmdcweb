@@ -18,8 +18,6 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
 function _inherits(subClass, superClass) { if (typeof superClass !== 'function' && superClass !== null) { throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var _materialDrawerDistMdcDrawer = require('@material/drawer/dist/mdc.drawer');
-
 var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
@@ -28,94 +26,60 @@ var _classnames = require('classnames');
 
 var _classnames2 = _interopRequireDefault(_classnames);
 
-var TemporaryDrawer = (function (_React$Component) {
-    _inherits(TemporaryDrawer, _React$Component);
+var Fab = (function (_React$Component) {
+    _inherits(Fab, _React$Component);
 
-    function TemporaryDrawer(props) {
-        _classCallCheck(this, TemporaryDrawer);
+    function Fab() {
+        _classCallCheck(this, Fab);
 
-        _get(Object.getPrototypeOf(TemporaryDrawer.prototype), 'constructor', this).call(this, props);
-        this.drawerNode = null;
-        this.drawerComponent = null;
-        this.open = this.open.bind(this);
+        _get(Object.getPrototypeOf(Fab.prototype), 'constructor', this).apply(this, arguments);
     }
 
-    _createClass(TemporaryDrawer, [{
-        key: 'open',
-        value: function open() {
-            this.drawerComponent.open = true;
-        }
-    }, {
-        key: 'componentDidMount',
-        value: function componentDidMount() {
-            this.drawerComponent = new _materialDrawerDistMdcDrawer.MDCTemporaryDrawer(this.drawerNode);
-            this.drawerComponent.open = this.props.open;
-        }
-    }, {
-        key: 'componentWillUnmount',
-        value: function componentWillUnmount() {
-            this.drawerComponent.destroy();
-        }
-    }, {
+    _createClass(Fab, [{
         key: 'render',
         value: function render() {
-            var _this = this;
-
             var _props = this.props;
+            var mini = _props.mini;
+            var plain = _props.plain;
+            var bottomRight = _props.bottomRight;
             var className = _props.className;
             var children = _props.children;
+            var style = _props.style;
 
-            var other = _objectWithoutProperties(_props, ['className', 'children']);
+            var other = _objectWithoutProperties(_props, ['mini', 'plain', 'bottomRight', 'className', 'children', 'style']);
 
-            var classnames = (0, _classnames2['default'])('mdc-temporary-drawer', 'mdc-typography', className);
+            var classnames = (0, _classnames2['default'])('mdc-fab', {
+                'mdc-fab--mini': mini,
+                'mdc-fab--plain': plain
+            }, className);
+
+            if (typeof style === 'undefined') style = {};
+
+            if (typeof bottomRight !== 'undefined') if (bottomRight) style = Object.assign({}, style, { position: "absolute", bottom: "1rem", "right": "1rem" });
+
+            var newChildren = _react2['default'].Children.map(this.props.children, function (child) {
+                var childclassnames = (0, _classnames2['default'])(child.props.className, 'mdc-fab__icon');
+                var newprops = Object.assign({}, child.props, { className: childclassnames });
+                return _react2['default'].cloneElement(child, newprops);
+            });
 
             return _react2['default'].createElement(
-                'aside',
-                _extends({ className: classnames, ref: function (input) {
-                        return _this.drawerNode = input;
-                    } }, other),
-                _react2['default'].createElement(
-                    'nav',
-                    { className: 'mdc-temporary-drawer__drawer' },
-                    children
-                )
+                'button',
+                _extends({ style: style, className: classnames }, other),
+                newChildren
             );
         }
+    }], [{
+        key: 'propTypes',
+        value: {
+            mini: _react2['default'].PropTypes.bool,
+            plain: _react2['default'].PropTypes.bool,
+            bottomRight: _react2['default'].PropTypes.bool
+        },
+        enumerable: true
     }]);
 
-    return TemporaryDrawer;
+    return Fab;
 })(_react2['default'].Component);
 
-exports.TemporaryDrawer = TemporaryDrawer;
-
-var TemporaryDrawerContent = (function (_React$Component2) {
-    _inherits(TemporaryDrawerContent, _React$Component2);
-
-    function TemporaryDrawerContent() {
-        _classCallCheck(this, TemporaryDrawerContent);
-
-        _get(Object.getPrototypeOf(TemporaryDrawerContent.prototype), 'constructor', this).apply(this, arguments);
-    }
-
-    _createClass(TemporaryDrawerContent, [{
-        key: 'render',
-        value: function render() {
-            var _props2 = this.props;
-            var className = _props2.className;
-            var children = _props2.children;
-
-            var other = _objectWithoutProperties(_props2, ['className', 'children']);
-
-            var classnames = (0, _classnames2['default'])('mdc-temporary-drawer__content', className);
-            return _react2['default'].createElement(
-                'nav',
-                _extends({ className: classnames }, other),
-                children
-            );
-        }
-    }]);
-
-    return TemporaryDrawerContent;
-})(_react2['default'].Component);
-
-exports.TemporaryDrawerContent = TemporaryDrawerContent;
+exports.Fab = Fab;

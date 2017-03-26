@@ -17,9 +17,14 @@ export {
 } from './toolbar'
 
 export {
-    TemporaryDrawer
+    TemporaryDrawer,
+    TemporaryDrawerContent
 } from './drawer'
 
 export {
     Button
-} from './button'
+} from './button';
+
+export {
+    Fab
+} from './fab';

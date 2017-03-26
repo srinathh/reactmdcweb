@@ -1,40 +1,57 @@
 import {MDCTemporaryDrawer} from '@material/drawer/dist/mdc.drawer';
 import React from 'react'
+import classNames from 'classnames'
 
 export class TemporaryDrawer extends React.Component{
-    static propTypes = {
-        trigger: React.PropTypes.node
-    }
     constructor(props){
         super(props)
-        this.drawerRoot = null
-        this.drawer = null
+        this.drawerNode = null
+        this.drawerComponent = null
+        this.open = this.open.bind(this)
+    }
+
+    open(){
+        this.drawerComponent.open = true
     }
 
     componentDidMount(){
-        this.drawer = new MDCTemporaryDrawer(this.drawerRoot)
+        this.drawerComponent = new MDCTemporaryDrawer(this.drawerNode)
+        this.drawerComponent.open = this.props.open
     }
+
     componentWillUnmount(){
-        this.drawer.destroy()
+        this.drawerComponent.destroy()
     }
+
     render(){
-        var trigger = (<i className="material-icons" >menu</i>)
-        if(!(this.props.trigger==null))
-            trigger = this.props.trigger
-        
+        const {className,children, ...other} = this.props
+        const classnames = classNames(
+            'mdc-temporary-drawer',
+            'mdc-typography',
+            className
+        )
 
         return(
-            <div>
-                <div style={{paddingRight:"16px"}} onClick={(e)=>{this.drawer.open=true}}>
-                    {trigger}             
-                </div>
-                <aside ref={input => this.drawerRoot= input} className="mdc-temporary-drawer mdc-typography">
+            <aside className={classnames} ref={input => this.drawerNode=input} {...other} >
                     <nav className="mdc-temporary-drawer__drawer">
-                        {this.props.children}
+                        {children}
                     </nav>
-                </aside>
-            </div>
-        )        
+            </aside>
+        )
     }
 }
 
+export class TemporaryDrawerContent extends React.Component{
+    render(){
+        const {className, children, ...other} = this.props
+        const classnames = classNames(
+            'mdc-temporary-drawer__content',
+            className
+        )
+        return(
+            <nav className={classnames} {...other}>
+                {children}
+            </nav>
+        )
+    }
+}
