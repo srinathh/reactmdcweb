@@ -8,10 +8,15 @@ export class TemporaryDrawer extends React.Component{
         this.drawerNode = null
         this.drawerComponent = null
         this.open = this.open.bind(this)
+        this.close = this.close.bind(this)
     }
 
     open(){
         this.drawerComponent.open = true
+    }
+
+    close(){
+        this.drawerComponent.open = false
     }
 
     componentDidMount(){
@@ -52,6 +57,21 @@ export class TemporaryDrawerContent extends React.Component{
             <nav className={classnames} {...other}>
                 {children}
             </nav>
+        )
+    }
+}
+
+export class TemporaryDrawerToolbarSpacer extends React.Component{
+    render(){
+        const {className, children, ...other} = this.props
+        const classnames = classNames(
+            'mdc-temporary-drawer__toolbar-spacer',
+            className    
+        )
+        return(
+            <div className={classnames} {...other}>
+                {children}
+            </div>
         )
     }
 }

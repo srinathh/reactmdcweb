@@ -38,12 +38,18 @@ var TemporaryDrawer = (function (_React$Component) {
         this.drawerNode = null;
         this.drawerComponent = null;
         this.open = this.open.bind(this);
+        this.close = this.close.bind(this);
     }
 
     _createClass(TemporaryDrawer, [{
         key: 'open',
         value: function open() {
             this.drawerComponent.open = true;
+        }
+    }, {
+        key: 'close',
+        value: function close() {
+            this.drawerComponent.open = false;
         }
     }, {
         key: 'componentDidMount',
@@ -119,3 +125,35 @@ var TemporaryDrawerContent = (function (_React$Component2) {
 })(_react2['default'].Component);
 
 exports.TemporaryDrawerContent = TemporaryDrawerContent;
+
+var TemporaryDrawerToolbarSpacer = (function (_React$Component3) {
+    _inherits(TemporaryDrawerToolbarSpacer, _React$Component3);
+
+    function TemporaryDrawerToolbarSpacer() {
+        _classCallCheck(this, TemporaryDrawerToolbarSpacer);
+
+        _get(Object.getPrototypeOf(TemporaryDrawerToolbarSpacer.prototype), 'constructor', this).apply(this, arguments);
+    }
+
+    _createClass(TemporaryDrawerToolbarSpacer, [{
+        key: 'render',
+        value: function render() {
+            var _props3 = this.props;
+            var className = _props3.className;
+            var children = _props3.children;
+
+            var other = _objectWithoutProperties(_props3, ['className', 'children']);
+
+            var classnames = (0, _classnames2['default'])('mdc-temporary-drawer__toolbar-spacer', className);
+            return _react2['default'].createElement(
+                'div',
+                _extends({ className: classnames }, other),
+                children
+            );
+        }
+    }]);
+
+    return TemporaryDrawerToolbarSpacer;
+})(_react2['default'].Component);
+
+exports.TemporaryDrawerToolbarSpacer = TemporaryDrawerToolbarSpacer;
