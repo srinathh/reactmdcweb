@@ -11,6 +11,7 @@ export {
 
 export {
     Toolbar, 
+    ToolbarRow,
     ToolbarTitle, 
     ToolbarSection, 
     Main

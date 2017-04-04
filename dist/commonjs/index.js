@@ -63,6 +63,12 @@ Object.defineProperty(exports, 'Toolbar', {
         return _toolbar.Toolbar;
     }
 });
+Object.defineProperty(exports, 'ToolbarRow', {
+    enumerable: true,
+    get: function get() {
+        return _toolbar.ToolbarRow;
+    }
+});
 Object.defineProperty(exports, 'ToolbarTitle', {
     enumerable: true,
     get: function get() {
