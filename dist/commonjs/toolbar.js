@@ -77,8 +77,40 @@ var Toolbar = (function (_React$Component) {
 
 exports.Toolbar = Toolbar;
 
-var ToolbarSection = (function (_React$Component2) {
-    _inherits(ToolbarSection, _React$Component2);
+var ToolbarRow = (function (_React$Component2) {
+    _inherits(ToolbarRow, _React$Component2);
+
+    function ToolbarRow() {
+        _classCallCheck(this, ToolbarRow);
+
+        _get(Object.getPrototypeOf(ToolbarRow.prototype), 'constructor', this).apply(this, arguments);
+    }
+
+    _createClass(ToolbarRow, [{
+        key: 'render',
+        value: function render() {
+            var _props2 = this.props;
+            var className = _props2.className;
+            var children = _props2.children;
+
+            var other = _objectWithoutProperties(_props2, ['className', 'children']);
+
+            var classnames = (0, _classnames2['default'])('mdc-toolbar__row', className);
+            return _react2['default'].createElement(
+                'div',
+                _extends({ className: classnames }, other),
+                children
+            );
+        }
+    }]);
+
+    return ToolbarRow;
+})(_react2['default'].Component);
+
+exports.ToolbarRow = ToolbarRow;
+
+var ToolbarSection = (function (_React$Component3) {
+    _inherits(ToolbarSection, _React$Component3);
 
     function ToolbarSection() {
         _classCallCheck(this, ToolbarSection);
@@ -89,13 +121,13 @@ var ToolbarSection = (function (_React$Component2) {
     _createClass(ToolbarSection, [{
         key: 'render',
         value: function render() {
-            var _props2 = this.props;
-            var alignStart = _props2.alignStart;
-            var alignEnd = _props2.alignEnd;
-            var className = _props2.className;
-            var children = _props2.children;
+            var _props3 = this.props;
+            var alignStart = _props3.alignStart;
+            var alignEnd = _props3.alignEnd;
+            var className = _props3.className;
+            var children = _props3.children;
 
-            var other = _objectWithoutProperties(_props2, ['alignStart', 'alignEnd', 'className', 'children']);
+            var other = _objectWithoutProperties(_props3, ['alignStart', 'alignEnd', 'className', 'children']);
 
             // both alignStart and alignEnd should not be true at the same time
             // if they are both true, then we will prioritize alignStart
@@ -125,8 +157,8 @@ var ToolbarSection = (function (_React$Component2) {
 
 exports.ToolbarSection = ToolbarSection;
 
-var ToolbarTitle = (function (_React$Component3) {
-    _inherits(ToolbarTitle, _React$Component3);
+var ToolbarTitle = (function (_React$Component4) {
+    _inherits(ToolbarTitle, _React$Component4);
 
     function ToolbarTitle() {
         _classCallCheck(this, ToolbarTitle);
@@ -137,11 +169,11 @@ var ToolbarTitle = (function (_React$Component3) {
     _createClass(ToolbarTitle, [{
         key: 'render',
         value: function render() {
-            var _props3 = this.props;
-            var className = _props3.className;
-            var children = _props3.children;
+            var _props4 = this.props;
+            var className = _props4.className;
+            var children = _props4.children;
 
-            var other = _objectWithoutProperties(_props3, ['className', 'children']);
+            var other = _objectWithoutProperties(_props4, ['className', 'children']);
 
             var classnames = (0, _classnames2['default'])('mdc-toolbar__title', className);
             return _react2['default'].createElement(
@@ -157,8 +189,8 @@ var ToolbarTitle = (function (_React$Component3) {
 
 exports.ToolbarTitle = ToolbarTitle;
 
-var Main = (function (_React$Component4) {
-    _inherits(Main, _React$Component4);
+var Main = (function (_React$Component5) {
+    _inherits(Main, _React$Component5);
 
     function Main() {
         _classCallCheck(this, Main);
@@ -169,12 +201,12 @@ var Main = (function (_React$Component4) {
     _createClass(Main, [{
         key: 'render',
         value: function render() {
-            var _props4 = this.props;
-            var fixedToolbarAdjust = _props4.fixedToolbarAdjust;
-            var children = _props4.children;
-            var className = _props4.className;
+            var _props5 = this.props;
+            var fixedToolbarAdjust = _props5.fixedToolbarAdjust;
+            var children = _props5.children;
+            var className = _props5.className;
 
-            var other = _objectWithoutProperties(_props4, ['fixedToolbarAdjust', 'children', 'className']);
+            var other = _objectWithoutProperties(_props5, ['fixedToolbarAdjust', 'children', 'className']);
 
             var classnames = (0, _classnames2['default'])({ 'mdc-toolbar-fixed-adjust': fixedToolbarAdjust }, className);
 

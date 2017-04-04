@@ -1,6 +1,6 @@
 {
   "name": "reactmdcweb",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "Material Design Components for Web packaged in React",
   "author": "",
   "repository": {
@@ -46,7 +46,7 @@
   "dependencies": {
     "classnames": "^2.2.5",
     "jquery": "2.1.4",
-    "material-components-web": "^0.6.0",
+    "material-components-web": "^0.8.0",
     "react": "0.14.3"
   }
 }

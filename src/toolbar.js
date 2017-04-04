@@ -35,6 +35,21 @@ export class Toolbar extends React.Component{
     }
 }
 
+export class ToolbarRow extends React.Component{
+    render(){
+        const {className, children, ...other} = this.props
+        let classnames = classNames(
+            'mdc-toolbar__row',
+            className
+        )
+        return(
+            <div className={classnames} {...other}>
+                {children}
+            </div>
+        )
+    }
+}
+
 export class ToolbarSection extends React.Component{
     static propTypes = {
         alignStart: React.PropTypes.bool,
