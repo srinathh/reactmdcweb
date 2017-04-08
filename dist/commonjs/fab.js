@@ -55,7 +55,7 @@ var Fab = (function (_React$Component) {
 
             if (typeof style === 'undefined') style = {};
 
-            if (typeof bottomRight !== 'undefined') if (bottomRight) style = Object.assign({}, style, { position: "absolute", bottom: "1rem", "right": "1rem" });
+            if (typeof bottomRight !== 'undefined') if (bottomRight) style = Object.assign({}, style, { position: "fixed", bottom: "1rem", "right": "1rem" });
 
             var newChildren = _react2['default'].Children.map(this.props.children, function (child) {
                 var childclassnames = (0, _classnames2['default'])(child.props.className, 'mdc-fab__icon');

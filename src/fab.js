@@ -28,7 +28,7 @@ export class Fab extends React.Component{
 
         if(typeof bottomRight !== 'undefined')
             if(bottomRight)
-                style = Object.assign({},style,{position: "absolute", bottom: "1rem", "right": "1rem"})
+                style = Object.assign({},style,{position: "fixed", bottom: "1rem", "right": "1rem"})
 
         const newChildren = React.Children.map(this.props.children, child=>{
             const childclassnames = classNames(
